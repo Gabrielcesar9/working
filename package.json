@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "airtable": "^0.10.1",
+    "airtable": "^0.8.1",
     "express": "^4.17.1",
-    "netlify-lambda": "^2.0.1",
+    "netlify-lambda": "^1.6.3",
     "yarn": "^1.22.10"
   }
 }
