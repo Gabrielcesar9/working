@@ -8,6 +8,8 @@ exports.handler = function(event, context, callback) {
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
+
+  
   var cpfs = new Array();
   base('Table 2').select({
     maxRecords: 100,
@@ -21,9 +23,7 @@ exports.handler = function(event, context, callback) {
     fetchNextPage();},
     function done(err){
         if(err){console.error(err); return;}
-    });
-console.log('cpfs');
-console.log(cpfs);
+    }), console.log('cpfs', cpfs);
 const items = event.body.split(',');
   base('Table 2').create([{
       "fields":{
