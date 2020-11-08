@@ -14,6 +14,7 @@ exports.handler = function(event, context, callback) {
     view: "Grid view"
 }).eachPage(function page(records, fetchNextPage) {
     records.forEach(function(record) {
+        cpfs.push("ok");
         cpfs.push(JSON.stringify(record.get('CPF')));
         console.log('Retrieved', record.get('CPF'));
     });
