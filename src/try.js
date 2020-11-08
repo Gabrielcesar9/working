@@ -1,6 +1,6 @@
 const Airtable = require ('airtable');
 exports.handler = function(event, context, callback) {
-    console.log(event.body);
+    console.log(typeof(event.body));
     const {API_URL, API_CLIENT_ID, API_KEY } = process.env;
   var base = new Airtable({apiKey:API_KEY}).base(
   API_CLIENT_ID);
