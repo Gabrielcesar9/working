@@ -18,11 +18,12 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();}, function done(err){
           if (err) {console.error(err); return;}
       });*/
+      const items = event.body.split(',');
   base('Table 1').create([{
       "fields":{
           "Name":"5",
-          "login":event.body[0],
-          "senha":event.body[1],
+          "login":items[0],
+          "senha":items[1],
           "atributo1":"ok"
       }
   }], function(err, records){
