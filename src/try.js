@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
           "RG":items[2],
           "Data de nascimento":items[3],
           "Endereco":items[4],
-          "Telfone do aluno":items[5],
+          "Telefone do aluno":items[5],
           "E-mail do aluno":items[6],
           "Serie ou ano em 2021 (na escola)":items[7],
           "Periodo (manha, tarde, noite)":items[8],
