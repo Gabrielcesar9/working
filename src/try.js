@@ -33,6 +33,7 @@ exports.handler = function(event, context, callback) {
       });
   })
   const data = [];
+  console.log('it was sent')
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
