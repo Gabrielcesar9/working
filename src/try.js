@@ -8,17 +8,18 @@ exports.handler = function(event, context, callback) {
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
-  /*base('Table 1').select({
-      maxRecords: 3,
-      view: "Grid view"
-  }).eachPage(function page(records, fetchNextPage){
-      records.forEach(function(record){
-          console.log('Retrieved', record.get('Name'));
-      });
-      fetchNextPage();}, function done(err){
-          if (err) {console.error(err); return;}
-      });*/
-      const items = event.body.split(',');
+  var cpfs = [];
+  base('Table 2').select({
+    maxRecords: 100,
+    view: "Grid view"
+}).eachPage(function page(records, fetchNextPage) {
+    records.forEach(function(record) {
+        cpfs.push(record);
+        console.log('Retrieved', record.get('CPF'));
+    });
+    fetchNextPage();
+    console.log(cpfs)
+    const items = event.body.split(',');
   base('Table 2').create([{
       "fields":{
           "Nome":items[0],
