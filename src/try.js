@@ -14,16 +14,16 @@ exports.handler = function(event, context, callback) {
     view: "Grid view"
 }).eachPage(function page(records, fetchNextPage) {
     records.forEach(function(record) {
-        cpfs.push(record.get('CPF'));
+        cpfs.push(JSON.stringify(record.get('CPF')));
         console.log('Retrieved', record.get('CPF'));
     });
     fetchNextPage();},
     function done(err){
         if(err){console.error(err); return;}
     });
-    console.log('cpfs');
-    console.log(cpfs);
-    const items = event.body.split(',');
+console.log('cpfs');
+console.log(cpfs);
+const items = event.body.split(',');
   base('Table 2').create([{
       "fields":{
           "Nome":items[0],
