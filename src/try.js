@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
-  var cpfs = new Array;
+  var cpfs = new Array();
   base('Table 2').select({
     maxRecords: 100,
     view: "Grid view"
