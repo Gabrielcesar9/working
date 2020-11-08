@@ -1,6 +1,5 @@
 const Airtable = require ('airtable');
-exports.handler = function(event, context, callback) {
-  
+exports.handler = function(event, context, callback) {  
   var base = new Airtable({apiKey:'keyFqKmXCtU2IkZGw'}).base(
   'app1ANJMB2FcVdb5o');
   Airtable.configure({
@@ -30,13 +29,10 @@ exports.handler = function(event, context, callback) {
           console.log(record.getId());
       });
   })
-  const data = [];
   console.log('it was sent')
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
     REFERENCE YOUR BASE-SPECIFIC API FOR EXAMPLES OF
     COMMON CRUD OPERATIONS
-  */
-
-  send(data);}
+  */}
