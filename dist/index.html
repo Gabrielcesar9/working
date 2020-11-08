@@ -2,9 +2,9 @@
 <h1>Test form</h1>
 <script>
     function Send(){
-      var nome = document.getElementById('name').value;
-      var cpf = document.getElementById('cpf').value;
-      data = [nome, cpf]
+      var nome = document.getElementById('name');
+      var cpf = document.getElementById('cpf');
+      data = [nome.value, cpf.value]
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
