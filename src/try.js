@@ -1,6 +1,5 @@
 const Airtable = require ('airtable');
 exports.handler = function(event, context, callback) {
-    console.log(JSON.stringify(event.body));
     const {API_URL, API_CLIENT_ID, API_KEY } = process.env;
   var base = new Airtable({apiKey:API_KEY}).base(
   API_CLIENT_ID);
@@ -21,8 +20,8 @@ exports.handler = function(event, context, callback) {
   base('Table 1').create([{
       "fields":{
           "Name":"5",
-          "login":event.body,
-          "senha":"gabriel123",
+          "login":event.body[0],
+          "senha":event.body[1],
           "atributo1":"ok"
       }
   }], function(err, records){
