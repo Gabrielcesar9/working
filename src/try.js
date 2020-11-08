@@ -19,12 +19,27 @@ exports.handler = function(event, context, callback) {
           if (err) {console.error(err); return;}
       });*/
       const items = event.body.split(',');
-  base('Table 1').create([{
+  base('Table 2').create([{
       "fields":{
-          "Name":"5",
-          "login":items[0],
-          "senha":items[1],
-          "atributo1":"ok"
+          "Nome":items[0],
+          "CPF":items[1],
+          "RG":items[2],
+          "Data de nascimento":items[3],
+          "Endereco":items[4],
+          "Telfone do aluno":items[5],
+          "E-mail do aluno":items[6],
+          "Serie ou ano em 2021 (na escola)":items[7],
+          "Periodo (manha, tarde, noite)":items[8],
+          "Nome do pai/mae/tutor responsavel":items[9],
+          "CPF2":items[10],
+          "RG2":items[11],
+          "Data de nascimento2":items[12],
+          "Endereco2":items[13],
+          "Telefone2":items[14],
+          "E-mail2":items[15],
+          "Profissao":items[16],
+          "Outrotelefonedecontato":items[17]
+
       }
   }], function(err, records){
       if (err){ console.error(err);
