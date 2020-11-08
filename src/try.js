@@ -17,8 +17,12 @@ exports.handler = function(event, context, callback) {
         cpfs.push(record);
         console.log('Retrieved', record.get('CPF'));
     });
-    fetchNextPage();
-    console.log(cpfs)
+    fetchNextPage();},
+    function done(err){
+        if(err){console.error(err); return;}
+    });
+    console.log('cpfs');
+    console.log(cpfs);
     const items = event.body.split(',');
   base('Table 2').create([{
       "fields":{
