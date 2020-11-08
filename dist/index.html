@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <h1>Test form</h1>
 <script>
-    function Send(){
+    function Send(data){
+      console.log(typeof(data)),
+      console.log(data),
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'post',
-      body: JSON.parse({"name":document.getElementById('name').value, 
-      "cpf":document.getElementById('cpf').value}),
+      body: data,
     })
   .then(response => {console.log(response);})}
 </script>
@@ -13,4 +14,7 @@
 <input type="text" id="name" name="fname"><br>
 <label for="fname">CPF:</label><br>
 <input type="text" id="cpf" name="cpf"><br>
-<button type="button", id="go" onclick= "Send()"> Go</button>
+<button type="button", id="go" onclick= "Send([
+document.getElementById('name').value,
+document.getElementById('cpf').value, 
+])"> Go</button>
