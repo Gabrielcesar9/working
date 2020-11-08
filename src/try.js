@@ -1,6 +1,6 @@
 const Airtable = require ('airtable');
 exports.handler = function(event, context, callback) {
-    console.log(event.body);
+    console.log(JSON.parse(event.body));
   var base = new Airtable({apiKey:'keyFqKmXCtU2IkZGw'}).base(
   'app1ANJMB2FcVdb5o');
   Airtable.configure({
