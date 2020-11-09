@@ -18,6 +18,7 @@ exports.handler = function(event, context, callback) {
         }).eachPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
+                console.log(typeof(record.get('Nome')));
                 cpfs.push(record.get('Nome'));
             });
         });
