@@ -11,7 +11,7 @@ exports.handler = function(event, context, callback) {
 
   item = event.body;
   console.log('item', item)
-  let table = base('Table 2').getTable("CPF");
+  let table = base.getTable("Table 2");
   let queryResult = await table.selectRecordsAsync();
   let record = queryResult.records[0];
   console.log(record.id);}
