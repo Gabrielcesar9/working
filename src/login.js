@@ -12,16 +12,21 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   var cpfs = new Array();
-  base('Table 2').select({
-    view: 'Grid view'
-}).firstPage(function(err, records) {
-    if (err) { console.error(err); return; }
-    records.forEach(function(record) {
-        cpfs.push(record.get('Nome'))
-        console.log('Retrieved', record.get('Nome'));
-    });
-}); 
-  setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
+  function first(_callback){
+    base('Table 2').select({
+        view: 'Grid view'
+    }).firstPage(function(err, records) {
+        if (err) { console.error(err); return; }
+        records.forEach(function(record) {
+            cpfs.push(record.get('Nome'))
+            console.log('Retrieved', record.get('Nome'));
+        });
+    }); 
+  }
+  first(function(){
+      console.log('cpfs:', cpfs)
+  });}
+  //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
