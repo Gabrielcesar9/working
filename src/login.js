@@ -37,15 +37,18 @@ setTimeout(function (){console.log('cpfs:', cpfs);
 if(cpfs.includes(item)){plong = "0";}
 else{plong="1";}},
  3000);
-console.log('plong', plong)
-callback(null, {
-  headers: {
-    'content-type': 'application/json',
-    'cache-control': 'Cache-Control: max-age=300, public'
-  },
-  statusCode: 200,
-  body: plong,
-})}
+setTimeout(function(){
+console.log('plong', plong);
+  callback(null, {
+    headers: {
+      'content-type': 'application/json',
+      'cache-control': 'Cache-Control: max-age=300, public'
+    },
+    statusCode: 200,
+    body: plong,
+  })
+},3500);
+}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
