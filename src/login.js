@@ -11,8 +11,7 @@ exports.handler = function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  function func(){
-      var cpfs = new Array();
+  var cpfs = new Array();
       base('Table 2').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 100,
@@ -25,14 +24,9 @@ exports.handler = function(event, context, callback) {
         fetchNextPage();
     
     }, function done(err) {
-        if (err) { console.error(err);console.log('done'); return cpfs; }
+        if (err) { console.error(err); return; }
     });
-        
-  }
-  const cpfs2 = func();
-  console.log('cpfs2:', cpfs2);
-  ;}
-  //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
+  setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
