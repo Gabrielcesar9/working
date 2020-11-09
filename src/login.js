@@ -11,9 +11,10 @@ exports.handler = async function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  let promise = new Promise(resolve =>{
-  var cpfs = new Array();
-  base('Table 2').select({
+  let cpfs = [];
+  function populateAsync(cpfs){
+    return new Promise(function(resolve, reject){
+      base('Table 2').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 100,
         view: "Grid view"
@@ -26,15 +27,13 @@ exports.handler = async function(event, context, callback) {
         fetchNextPage();
     
     }, function done(err) {
-        if (err) { console.error(err); console.log('error1');return; }
+        if (err) { console.error(err); return; }
     });
-    ()=>resolve(cpfs);
-  });
-  async function asyncCall(){
-    var cpf2 = await promise;
-    console.log('cpf2', cpf2);
-  }
-  asyncCall();
+    resolve(cpfs)
+    })}
+  populateAsync(cpfs).then(function(){console.log('finalcpfs');
+  console.log(cpfs)})
+  
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);
 }
   
