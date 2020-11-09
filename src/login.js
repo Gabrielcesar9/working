@@ -36,7 +36,7 @@ exports.handler = function(event, context, callback) {
 if(cpfs.includes(item)){
   return { statusCode : 200 , body : "0"};
 }
-else{return { statusCode : 200 , body : "1"};}},
+else{return { statusCode : 150 , body : "1"};}},
  3000);}
   
   /**
