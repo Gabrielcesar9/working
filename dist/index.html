@@ -5,7 +5,7 @@
       data = cpf_.value
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
       method: 'put',
-      body: data,
+      body: [data],
     })
   .then(response => {console.log(response);});
   }

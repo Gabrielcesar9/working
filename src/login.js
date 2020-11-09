@@ -10,8 +10,8 @@ exports.handler = function(event, context, callback) {
   });
 
   item = event.body;
-  console.log('item', item)
-  let table = base.getTable("Table 2");
+  console.log('item', item);
+  let table = base.getTable('Table 2');
   let queryResult = table.selectRecordsAsync();
   setTimeout(function(){ let record = queryResult.records[0];
     console.log(record.id); }, 3000);}
