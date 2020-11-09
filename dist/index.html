@@ -11,10 +11,12 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then(data=>(function(data)
-  {if (data=="0"){alert("Este CPF já está cadastrado");}
-  else{alert("Pode ir");}}));}
+  .then(response => response.text()).then(data=>(console.log(data)));}
+  function dialog(){
+    alert("the alert is working");
+  }
 </script>
 <label for="cpf_">CPF:</label><br>
 <input type="text" id="cpf_" name="cpf_"><br>
 <button type="button", id="login_" onclick= "Login()"> Login</button>
+<button type="button", id="bur" onclick= "dialog()"> alert</button>
