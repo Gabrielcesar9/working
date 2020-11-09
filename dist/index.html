@@ -4,10 +4,11 @@
       var cpf_ = document.getElementById('cpf_');
       data = cpf_.value
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
-      method: 'put',
+      method: 'POST',
       body: [data],
     })
-  .then(response => {console.log('response', response)});
+  .then(response => {response.json()}).then(data=>(console.log("data is: ", data))
+  .catch(error => console.error("Error1:", error)));
   }
 </script>
 <label for="cpf_">CPF:</label><br>
