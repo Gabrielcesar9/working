@@ -4,6 +4,10 @@
       var cpf_ = document.getElementById('cpf_');
       data = cpf_.value
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       },
       method: 'POST',
       body: [data],
     })
