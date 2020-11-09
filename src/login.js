@@ -27,7 +27,9 @@ exports.handler = async function(event, context, callback) {
     }, function done(err) {
         if (err) { console.error(err); return; }
     });
-  setTimeout(function(){if(cpfs.includes(item)){alert("Este CPF já está cadastrado")}}, 3000);}
+  setTimeout(function(){console.log('cpfs',cpfs);
+  if(cpfs.includes(item)){console.log("já existe");alert("Este CPF já está cadastrado")}},
+   3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
