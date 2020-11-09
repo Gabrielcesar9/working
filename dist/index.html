@@ -11,8 +11,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then(data=>(function(data){console.log("This is beign called");
-console.log(data)}));}
+  .then(response => response.text()).then(data=>console.log(data),function(){if(2>1){console.log("code is beign called")}});}
   function dialog(){
     alert("the alert is working");
   }
