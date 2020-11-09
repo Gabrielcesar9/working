@@ -7,8 +7,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => {response.json()}).then(data=>(console.log("data is: ", data))
-  .catch(error => console.error("Error1:", error)));
+  .then(response => {return response.json();}).then(data=>(console.log("data is: ", data)));
   }
 </script>
 <label for="cpf_">CPF:</label><br>
