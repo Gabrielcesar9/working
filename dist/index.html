@@ -11,7 +11,8 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then(data=>(console.log(data)));}
+  .then(response => response.text()).then(data=>(function(data){console.log("This is beign called");
+console.log(data)}));}
   function dialog(){
     alert("the alert is working");
   }
@@ -19,4 +20,4 @@
 <label for="cpf_">CPF:</label><br>
 <input type="text" id="cpf_" name="cpf_"><br>
 <button type="button", id="login_" onclick= "Login()"> Login</button>
-<button type="button", id="bur" onclick= "dialog()"> alert</button>
+<button type="button", id="bur" onclick= "dialog()"> Alert</button>
