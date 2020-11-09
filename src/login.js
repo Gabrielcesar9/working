@@ -1,11 +1,4 @@
 const Airtable = require ('airtable');
-const express = require('express');
-const app = express();
-app.all("/", function(req, res, next) {
-  req.header("Origin", "*"); // ideally the '*' will be your hostname
-  return next();
-});
-
 exports.handler = function(event, context, callback) {
     console.log(typeof(event.body));
     const {API_URL, API_CLIENT_ID, API_KEY } = process.env;
@@ -52,7 +45,7 @@ callback(null, {
     'cache-control': 'Cache-Control: max-age=300, public'
   },
   statusCode: 200,
-  body: 'This is the response dude',
+  body: out,
 })}
   
   /**
