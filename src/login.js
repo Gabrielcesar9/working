@@ -16,7 +16,7 @@ exports.handler = function(event, context, callback) {
         base('Table 2').select({
             view: 'Grid view'
         }).eachPage(function(err, records) {
-            if (err) { console.error(err); return;}
+            if (err) { console.error(err);}
             records.forEach(function(record) {
               console.log('retrieved', record.get('Nome'));
                 console.log('tyoeof', typeof(record.get('Nome')));
