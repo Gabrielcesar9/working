@@ -18,10 +18,10 @@ exports.handler = function(event, context, callback) {
     }).firstPage(function(err, records) {
         if (err) { console.error(err); return; }
         records.forEach(function(record) {
-            cpfs.push(record.get('Nome'))
-            console.log('Retrieved', record.get('Nome'));
+            cpfs.push(record.get('Nome'));
         });
-    }); 
+    });
+    _callback();
   }
   first(function(){
       console.log('cpfs:', cpfs)
