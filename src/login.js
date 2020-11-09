@@ -32,15 +32,18 @@ exports.handler = function(event, context, callback) {
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-  setTimeout(function plong(){console.log('cpfs:', cpfs);
+function plong(){
+  setTimeout(function (){console.log('cpfs:', cpfs);
 if(cpfs.includes(item)){
   return { statusCode : 200 , body : "0"};
 }
 else{return { statusCode : 150 , body : "1"};}},
- 3000);
+ 3000);}
+var out = plong();
+console.log('plong', out)
 callback(null, {
   statusCode: 200,
-  body: plong(),
+  body: out,
 })}
   
   /**
