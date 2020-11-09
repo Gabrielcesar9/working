@@ -12,7 +12,7 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   
-  console.log('cpfs:', function(){var cpfs = new Array();
+  console.log('cpfs:', function(callback){var cpfs = new Array();
     base('Table 2').select({
         view: 'Grid view'
     }).eachPage(function(err, records) {
@@ -20,7 +20,7 @@ exports.handler = function(event, context, callback) {
         records.forEach(function(record) {
             cpfs.push(record.get('Nome'));
         });
-    });
+    });console.log('inner', cpfs);
     return cpfs;});
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
