@@ -12,19 +12,16 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   
-  function first(){
-    var cpfs = new Array();
+  console.log('cpfs:', function(){var cpfs = new Array();
     base('Table 2').select({
         view: 'Grid view'
-    }).firstPage(function(err, records) {
+    }).eachPage(function(err, records) {
         if (err) { console.error(err); return; }
         records.forEach(function(record) {
             cpfs.push(record.get('Nome'));
         });
     });
-    return cpfs;
-  }
-  console.log('cpfs:', first());
+    return cpfs;});
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
