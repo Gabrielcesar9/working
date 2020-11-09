@@ -11,7 +11,8 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => {return response.Response;}).then(data=>(console.log(typeof(data),  "data is: ", data)));
+  .then(response => {return response.Response;}).then(logi=>{return logi.json();})
+  .then(data=>(console.log(typeof(data),  "data is: ", data)));
   }
 </script>
 <label for="cpf_">CPF:</label><br>
