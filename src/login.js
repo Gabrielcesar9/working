@@ -25,7 +25,7 @@ exports.handler = function(event, context, callback) {
         fetchNextPage();
     
     }, function done(err) {
-        if (err) { console.error(err); return cpfs; }
+        if (err) { console.error(err);console.log('done'); return cpfs; }
     });
         
   }
