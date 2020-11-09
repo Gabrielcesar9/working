@@ -11,8 +11,9 @@ exports.handler = function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  var cpfs = new Array();
-  function first(_callback){
+  
+  function first(){
+    var cpfs = new Array();
     base('Table 2').select({
         view: 'Grid view'
     }).firstPage(function(err, records) {
@@ -21,11 +22,10 @@ exports.handler = function(event, context, callback) {
             cpfs.push(record.get('Nome'));
         });
     });
-    _callback();
+    return cpfs;
   }
-  first(function(){
-      console.log('cpfs:', cpfs);
-  });}
+  console.log('cpfs:', first);
+  ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
   /**
