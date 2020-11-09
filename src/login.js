@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
   }
   let cpfs2 = func();
   console.log('cpfs2:', cpfs2);
-  setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
+  setTimeout(function(){console.log('cpfs:', cpfs2)}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
