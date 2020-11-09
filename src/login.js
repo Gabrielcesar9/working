@@ -12,9 +12,7 @@ exports.handler = async function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   let cpfs = [];
-  function populateAsync(cpfs){
-    return new Promise(function(resolve, reject){
-      base('Table 2').select({
+  base('Table 2').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 100,
         view: "Grid view"
@@ -29,13 +27,7 @@ exports.handler = async function(event, context, callback) {
     }, function done(err) {
         if (err) { console.error(err); return; }
     });
-    resolve(cpfs)
-    })}
-  populateAsync(cpfs).then(function(){console.log('finalcpfs');
-  console.log(cpfs)})
-  
-  //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);
-}
+  setTimeout(function(){if(cpfs.includes(item)){alert("Este CPF já está cadastrado")}}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
