@@ -18,22 +18,16 @@ exports.handler = function(event, context, callback) {
         maxRecords: 100,
         view: "Grid view"
     }).eachPage(function page(records, fetchNextPage) {
-        // This function (`page`) will get called for each page of records.
-    
         records.forEach(function(record) {
           cpfs.push(record.get('Nome'));
             console.log('Retrieved', record.get('Nome'));
         });
-    
-        // To fetch the next page of records, call `fetchNextPage`.
-        // If there are more records, `page` will get called again.
-        // If there are no more records, `done` will get called.
         fetchNextPage();
     
     }, function done(err) {
-        if (err) { console.error(err); return; }
+        if (err) { console.error(err); return cpfs; }
     });
-        return cpfs;
+        
   }
   const cpfs2 = func();
   console.log('cpfs2:', cpfs2);
