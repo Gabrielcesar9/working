@@ -40,12 +40,12 @@ else{return "1";}},
 var out = plong();
 console.log('plong', out)
 callback(null, {
-  statusCode: 200,
-  body: 'This is the response dude',
   headers: {
     'content-type': 'application/json',
     'cache-control': 'Cache-Control: max-age=300, public'
-  }
+  },
+  statusCode: 200,
+  body: 'This is the response dude',
 })}
   
   /**
