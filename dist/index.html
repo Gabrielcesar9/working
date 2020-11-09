@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <script>
     function check(out){
+      console.log("this is the out", out);
       if(out=="0"){
         alert("this is 0")
       }else{alert("this is 1")}
@@ -16,7 +17,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then(data=>console.log(data),this.check(data))}
+  .then(response => response.text()).then((data)=>{this.check(data)})}
   function dialog(){
     alert("the alert is working");
   }
