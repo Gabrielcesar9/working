@@ -32,20 +32,19 @@ exports.handler = function(event, context, callback) {
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-function plong(){
-  setTimeout(function (){console.log('cpfs:', cpfs);
-if(cpfs.includes(item)){return "0";}
-else{return "1";}},
- 3000);}
-var out = plong();
-console.log('plong', out)
+var plong = new String;
+setTimeout(function (){console.log('cpfs:', cpfs);
+if(cpfs.includes(item)){plong = "0";}
+else{plong="1";}},
+ 3000);
+console.log('plong', plong)
 callback(null, {
   headers: {
     'content-type': 'application/json',
     'cache-control': 'Cache-Control: max-age=300, public'
   },
   statusCode: 200,
-  body: out,
+  body: plong,
 })}
   
   /**
