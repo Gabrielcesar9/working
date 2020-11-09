@@ -11,11 +11,17 @@ exports.handler = function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  let table = base.getTable('Table 2');
-  let queryResult = table.selectRecordsAsync();
-  setTimeout(function(){ let record = queryResult.records[0];
-    console.log(record.id); }, 3000);}
-  
+  var cpfs = new Array();
+  base('Table 2').select({
+    view: 'Grid view'
+}).firstPage(function(err, records) {
+    if (err) { console.error(err); return; }
+    records.forEach(function(record) {
+        cpfs.push(record.get('Nome'))
+        console.log('Retrieved', record.get('Nome'));
+    });
+}); 
+  setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
