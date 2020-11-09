@@ -11,22 +11,17 @@ exports.handler = function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  function func(){
-      let cpfs = new Array();
-        base('Table 2').select({
-            view: 'Grid view'
-        }).eachPage(function(err, records) {
-            if (err) { console.error(err); return;}
-            records.forEach(function(record) {
-                console.log('tyoeof', typeof(record.get('Nome')));
-                cpfs.push(record.get('Nome'));
-            });
+  var cpfs = new Array();
+    base('Table 2').select({
+        view: 'Grid view'
+    }).eachPage(function(err, records) {
+        if (err) { console.error(err); return;}
+        records.forEach(function(record) {
+            console.log('tyoeof', typeof(record.get('Nome')));
+            cpfs.push(record.get('Nome'));
         });
-        return cpfs;
-  }
-  let cpfs2 = func();
-  console.log('cpfs2:', cpfs2);
-  setTimeout(function(){console.log('cpfs:', cpfs2)}, 3000);}
+    });
+  setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
