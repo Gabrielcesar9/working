@@ -21,7 +21,7 @@ exports.handler = function(event, context, callback) {
         // This function (`page`) will get called for each page of records.
     
         records.forEach(function(record) {
-          cpfs.push(record.get('Nome'))
+          cpfs.push(record.get('Nome'));
             console.log('Retrieved', record.get('Nome'));
         });
     
