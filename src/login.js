@@ -34,10 +34,8 @@ exports.handler = function(event, context, callback) {
 });
 function plong(){
   setTimeout(function (){console.log('cpfs:', cpfs);
-if(cpfs.includes(item)){
-  return { statusCode : 200 , body : "0"};
-}
-else{return { statusCode : 150 , body : "1"};}},
+if(cpfs.includes(item)){return "0";}
+else{return "1";}},
  3000);}
 var out = plong();
 console.log('plong', out)
