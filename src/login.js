@@ -13,16 +13,26 @@ exports.handler = function(event, context, callback) {
   console.log('item', item);
   function func(){
       var cpfs = new Array();
-        base('Table 2').select({
-            view: 'Grid view'
-        }).eachPage(function(err, records) {
-            if (err) { console.error(err);}
-            records.forEach(function(record) {
-              console.log('retrieved', record.get('Nome'));
-                console.log('tyoeof', typeof(record.get('Nome')));
-                cpfs.push(record.get('Nome'));
-            });
+      base('Table 2').select({
+        // Selecting the first 3 records in Grid view:
+        maxRecords: 100,
+        view: "Grid view"
+    }).eachPage(function page(records, fetchNextPage) {
+        // This function (`page`) will get called for each page of records.
+    
+        records.forEach(function(record) {
+          cpfs.push(record.get('Nome'))
+            console.log('Retrieved', record.get('Nome'));
         });
+    
+        // To fetch the next page of records, call `fetchNextPage`.
+        // If there are more records, `page` will get called again.
+        // If there are no more records, `done` will get called.
+        fetchNextPage();
+    
+    }, function done(err) {
+        if (err) { console.error(err); return; }
+    });
         return cpfs;
   }
   const cpfs2 = func();
