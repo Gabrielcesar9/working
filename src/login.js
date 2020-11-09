@@ -43,7 +43,11 @@ var out = plong();
 console.log('plong', out)
 callback(null, {
   statusCode: 200,
-  body: out,
+  body: JSON.stringify(out),
+  headers: {
+    'content-type': 'application/json',
+    'cache-control': 'Cache-Control: max-age=300, public'
+  }
 })}
   
   /**
