@@ -11,7 +11,7 @@ exports.handler = async function(event, context, callback) {
 
   item = event.body;
   console.log('item', item);
-  let cpfs = [];
+  var cpfs = new Array();
   base('Table 2').select({
         // Selecting the first 3 records in Grid view:
         maxRecords: 100,
@@ -19,8 +19,8 @@ exports.handler = async function(event, context, callback) {
     }).eachPage(function page(records, fetchNextPage) {
         // This function (`page`) will get called for each page of records. 
         records.forEach(function(record) {
-          cpfs.push(record.get('Nome'));
-            console.log('Retrieved', record.get('Nome'));
+          cpfs.push(record.get('CPF'));
+            console.log('Retrieved', record.get('CPF'));
         });
         fetchNextPage();
     
