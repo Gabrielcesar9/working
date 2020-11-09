@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <script>
+    function check(out){
+      if(out="0"){
+        alert("this is 0")
+      }else{alert("this is 1")}
+    }
     function Login(){
       var cpf_ = document.getElementById('cpf_');
       data = cpf_.value
@@ -11,7 +16,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then(data=>console.log(data),function(){if(2>1){console.log("code is beign called")}});}
+  .then(response => response.text()).then(data=>console.log(data),this.check(data))}
   function dialog(){
     alert("the alert is working");
   }
