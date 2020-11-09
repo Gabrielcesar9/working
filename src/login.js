@@ -18,15 +18,14 @@ exports.handler = function(event, context, callback) {
         }).eachPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
-                console.log(typeof(record.get('Nome')));
+                console.log('tyoeof', typeof(record.get('Nome')));
                 cpfs.push(record.get('Nome'));
             });
         });
         return cpfs;
-
   }
-  var cpfs2 = func();
-  console.log('cpfs:', cpfs2);
+  let cpfs2 = func();
+  console.log('cpfs2:', cpfs2);
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
