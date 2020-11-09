@@ -9,29 +9,8 @@ exports.handler = function(event, context, callback) {
     apiKey: API_KEY
   });
 
-  
-  var cpfs = new Array();
-  function retrieve(callback){
-  base('Table 2').select({
-    maxRecords: 100,
-    view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-    records.forEach(function(record) {
-        cpfs.push("ok");
-        cpfs.push(JSON.stringify(record.get('CPF')));
-        console.log('Retrieved', record.get('CPF'));
-    });
-    fetchNextPage();},
-    function done(err){
-        if(err){console.error(err); return;}
-    });callback();}
-    function printe(){
-        console.log('cpfs', cpfs);
-    }
-    retrieve(printe);
-
 const items = event.body.split(',');
-  /*base('Table 2').create([{
+base('Table 2').create([{
       "fields":{
           "Nome":items[0],
           "CPF":items[1],
