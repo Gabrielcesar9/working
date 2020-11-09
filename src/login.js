@@ -32,12 +32,16 @@ exports.handler = function(event, context, callback) {
 }, function done(err) {
     if (err) { console.error(err); return; }
 });
-  setTimeout(function(){console.log('cpfs:', cpfs);
+  setTimeout(function plong(){console.log('cpfs:', cpfs);
 if(cpfs.includes(item)){
   return { statusCode : 200 , body : "0"};
 }
 else{return { statusCode : 150 , body : "1"};}},
- 3000);}
+ 3000);
+callback(null, {
+  statusCode: 200,
+  body: plong(),
+})}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
