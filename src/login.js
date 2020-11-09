@@ -20,12 +20,12 @@ exports.handler = function(event, context, callback) {
             records.forEach(function(record) {
                 cpfs.push(record.get('Nome'));
             });
-        });console.log('inner', cpfs);
+        });
         return cpfs;
 
   }
-  var cpfs = func();
-  console.log('cpfs:', cpfs);
+  var cpfs2 = func();
+  console.log('cpfs:', cpfs2);
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
