@@ -24,7 +24,7 @@ exports.handler = function(event, context, callback) {
     });
     return cpfs;
   }
-  console.log('cpfs:', first);
+  console.log('cpfs:', first());
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
   
