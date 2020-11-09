@@ -12,11 +12,11 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   function func(){
-      var cpfs = new Array();
+      let cpfs = new Array();
         base('Table 2').select({
             view: 'Grid view'
         }).eachPage(function(err, records) {
-            if (err) { console.error(err); return; }
+            if (err) { console.error(err); return;}
             records.forEach(function(record) {
                 console.log('tyoeof', typeof(record.get('Nome')));
                 cpfs.push(record.get('Nome'));
@@ -24,7 +24,7 @@ exports.handler = function(event, context, callback) {
         });
         return cpfs;
   }
-  let cpfs2 = func();
+  const cpfs2 = func();
   console.log('cpfs2:', cpfs2);
   ;}
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);}
