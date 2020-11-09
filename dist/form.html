@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<h1>Test form</h1>
+<script>
+    function Send(){
+      var nome = document.getElementById('name');
+      var cpf = document.getElementById('cpf');
+      var rg = document.getElementById('rg');
+      var datadenascimento = document.getElementById('datadenascimento');
+      var endereco = document.getElementById('endereco');
+      var telefonedoaluno = document.getElementById('telefonedoaluno');
+      var emaildoaluno = document.getElementById('emaildoaluno');
+      var serie = document.getElementById('serie');
+      var periodo = document.getElementById('periodo');
+      var responsavel = document.getElementById('responsavel');
+      var cpf2 = document.getElementById('cpf2');
+      var rg2 = document.getElementById('rg2');
+      var datadenascimento2 = document.getElementById('datadenascimento2');
+      var endereco2 = document.getElementById('endereco2');
+      var telefone2 = document.getElementById('telefone2');
+      var email2 = document.getElementById('email2');
+      var profissao = document.getElementById('profissao');
+      var ocontato = document.getElementById('ocontato');
+      data = [nome.value, cpf.value, rg.value, datadenascimento.value,endereco.value,telefonedoaluno.value,
+    emaildoaluno.value, serie.value, periodo.value, responsavel.value, cpf2.value, rg2.value, 
+    datadenascimento2.value, endereco2.value, telefone2.value, email2.value, profissao.value, ocontato.value];
+    fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
+      method: 'put',
+      body: data,
+    })
+  .then(response => {console.log(response);});
+  }
+</script>
+<label for="fname">Nome:</label><br>
+<input type="text" id="name" name="fname"><br>
+
+<label for="cpf">CPF:</label><br>
+<input type="text" id="cpf" name="cpf"><br>
+
+<label for="rg">RG:</label><br>
+<input type="text" id="rg" name="rg"><br>
+
+<label for="datadenascimento">Data de nascimento:</label><br>
+<input type="text" id="datadenascimento" name="datadenascimento"><br>
+
+<label for="endereco">Endereço:</label><br>
+<input type="text" id="endereco" name="endereco"><br>
+
+<label for="telefonedoaluno">Telefone do aluno(incluir DDD):</label><br>
+<input type="text" id="telefonedoaluno" name="telefonedoaluno"><br>
+
+<label for="emaildoaluno">E-mail do aluno:</label><br>
+<input type="text" id="emaildoaluno" name="emaildoaluno"><br>
+
+<label for="serie">Ano escolar em 2021:</label><br>
+<select id="serie" name="serie">
+  <option value="0">Jardim</option>
+  <option value="1">1º</option>
+  <option value="2">2º</option>
+  <option value="3">3º</option>
+  <option value="4">4º</option>
+  <option value="5">5º</option>
+  <option value="6">6º</option>
+  <option value="7">7º</option>
+  <option value="8">8º</option>
+  <option value="9">9º ano</option>
+  <option value="1m">Primeiro ano (médio)</option>
+  <option value="2m">Segundo ano (médio)</option>
+  <option value="3m">Terceiro ano (médio)</option>
+</select><br>
+
+<label for="periodo">Período escolar:</label><br>
+<select id="periodo" name="periodo">
+  <option value = "manha">Manhã</option>
+  <option value = "tarde">Tarde</option>
+  <option value = "noite">Noite</option>
+</select><br>
+
+<h2 id="Dresp">Dados do Responsável</h2><br>
+<label for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
+<input type="text" id="responsavel" name="responsavel"><br>
+<label for="cpf2">CPF:</label><br>
+<input type="text" id="cpf2" name="cpf2"><br>
+
+<label for="rg2">RG:</label><br>
+<input type="text" id="rg2" name="rg2"><br>
+
+<label for="datadenascimento2">Data de nascimento:</label><br>
+<input type="text" id="datadenascimento2" name="datadenascimento2"><br>
+
+<label for="endereco2">Endereço:</label><br>
+<input type="text" id="endereco2" name="endereco2"><br>
+
+<label for="telefone2">Telefone(incluir DDD):</label><br>
+<input type="text" id="telefone2" name="telefone2"><br>
+
+<label for="email2">E-mail:</label><br>
+<input type="text" id="email2" name="email2"><br>
+
+<label for="profissao">Profissão:</label><br>
+<input type="text" id="profissao" name="profissao"><br>
+
+<label for="ocontato">Outro telefone de contato (familiar, vizinho etc.):</label><br>
+<input type="text" id="ocontato" name="ocontato"><br>
+
+<button type="button", id="go" onclick= "Send()"> Go</button>

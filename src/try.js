@@ -11,6 +11,7 @@ exports.handler = function(event, context, callback) {
 
   
   var cpfs = new Array();
+  function retrieve(callback){
   base('Table 2').select({
     maxRecords: 100,
     view: "Grid view"
@@ -23,9 +24,14 @@ exports.handler = function(event, context, callback) {
     fetchNextPage();},
     function done(err){
         if(err){console.error(err); return;}
-    }), console.log('cpfs', cpfs);
+    });callback();}
+    function printe(){
+        console.log('cpfs', cpfs);
+    }
+    retrieve(printe);
+
 const items = event.body.split(',');
-  base('Table 2').create([{
+  /*base('Table 2').create([{
       "fields":{
           "Nome":items[0],
           "CPF":items[1],
