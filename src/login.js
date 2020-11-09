@@ -30,8 +30,11 @@ exports.handler = async function(event, context, callback) {
     });
     ()=>resolve(cpfs);
   });
-  var cpf2 = await promise;
-  console.log('cpf2', cpf2);
+  async function asyncCall(){
+    var cpf2 = await promise;
+    console.log('cpf2', cpf2);
+  }
+  asyncCall();
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);
 }
   
