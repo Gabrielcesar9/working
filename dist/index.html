@@ -12,9 +12,9 @@
       body: [data],
     })
   .then(response => response.text()).then(data=>(function (){
-    if(data=="0"){alert("Este CPF já foi cadastrado");
+    if(data=="0"){console.log('0');alert("Este CPF já foi cadastrado");
     window.location('https://objective-newton-1a197c.netlify.app/.netlify/index')}
-else{window.location('https://objective-newton-1a197c.netlify.app/.netlify/form')}}));
+else{console.log('1'),window.location('https://objective-newton-1a197c.netlify.app/.netlify/form')}}));
   }
 </script>
 <label for="cpf_">CPF:</label><br>
