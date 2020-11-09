@@ -10,10 +10,11 @@ exports.handler = function(event, context, callback) {
   });
 
   item = event.body;
-  base('Table 2').find(item, function(err, record) {
-    if (err) { console.error(err); return; }
-    console.log('Retrieved', record.id);
-});;}
+  console.log('item', item)
+  let table = base('Table 2').getTable("CPF");
+  let queryResult = await table.selectRecordsAsync();
+  let record = queryResult.records[0];
+  console.log(record.id);}
   
   
   /**
