@@ -12,12 +12,13 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   function func(){
-      let cpfs = new Array();
+      var cpfs = new Array();
         base('Table 2').select({
             view: 'Grid view'
         }).eachPage(function(err, records) {
             if (err) { console.error(err); return;}
             records.forEach(function(record) {
+              console.log('retrieved', record.get('Nome'));
                 console.log('tyoeof', typeof(record.get('Nome')));
                 cpfs.push(record.get('Nome'));
             });
