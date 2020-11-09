@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback) {
     if (err) { console.error(err); return; }
 });
   setTimeout(function(){console.log('cpfs:', cpfs);
-if(cpfs.includes(item)){alert("Este CPF já está cadastrado");}}, 3000);}
+if(cpfs.includes(item)){window.alert("Este CPF já está cadastrado");}}, 3000);}
   
   /**
     AIRTABLE REQUEST LOGIC GOES HERE, APPENDING TO DATA
