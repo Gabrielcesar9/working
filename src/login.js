@@ -26,10 +26,10 @@ exports.handler = async function(event, context, callback) {
         fetchNextPage();
     
     }, function done(err) {
-        if (err) { console.error(err); return; }
+        if (err) { console.error(err); console.log('error1');return; }
     });
     ()=>resolve(cpfs);
-  })
+  });
   var cpf2 = await promise;
   console.log('cpf2', cpf2);
   //setTimeout(function(){console.log('cpfs:', cpfs)}, 3000);
