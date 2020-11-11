@@ -28,6 +28,7 @@
     for(i=0; i<data.length;i++){console.log(i, data[i].value)}
     }
 </script>
+<form>
 <div class="area" >
   <header> </header>
   <ul class="circles">
@@ -47,7 +48,7 @@
   <h2>Dados do aluno</h2>
   <form>
     <label class="lab" for="fname">Nome:</label><br>
-    <input class="inp" type="text" id="name" name="fname" required><br>
+    <input class="inp" type="text" id="name" name="fname" required/><br>
 
     <label class="lab" for="cpf">CPF:</label><br>
     <input class="inp" type="number" id="cpf" name="cpf" required><br>
@@ -128,5 +129,6 @@
     <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
     </div>
   </div>
-<footer><button type="button", id="go" onclick= "Send()"> Cadastrar </button></footer>
+<footer><button type="submit", id="go" onclick= "Send()"> Cadastrar </button></footer>
 </div >
+</form>
