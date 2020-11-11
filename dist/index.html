@@ -13,8 +13,10 @@
     }
     function Login(){
       var cpf_ = document.getElementById('cpf_');
-      data = cpf_.value
-    fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
+      var data = cpf_.value
+      if(data.lenght!=11){alert("CPF inválido");
+        window.location='https://objective-newton-1a197c.netlify.app/index'}
+      else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -22,7 +24,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then((data)=>{this.check(data)})}
+  .then(response => response.text()).then((data)=>{this.check(data)})}}
 </script>
 <body>
   <form class="login">
