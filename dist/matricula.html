@@ -35,7 +35,7 @@
       console.log("this is the out", out);
       if(out=="0"){
         alert("Este CPF já está cadastrado");
-        window.location='https://objective-newton-1a197c.netlify.app/matricula'
+        window.location='https://objective-newton-1a197c.netlify.app/index'
       }else{Send()}
     }
     function Login(){
@@ -43,7 +43,7 @@
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
       if(data.length!=11){alert("CPF inválido");
-        window.location='https://objective-newton-1a197c.netlify.app/index'}
+        window.location='https://objective-newton-1a197c.netlify.app/matricula'}
       else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
@@ -75,10 +75,10 @@
     <input class="inp" type="text" id="name" name="fname" required><br>
 
     <label class="lab" for="cpf">CPF:</label><br>
-    <input class="inp" type="text" id="cpf" name="cpf" required><br>
+    <input class="inp" type="number" id="cpf" name="cpf" required><br>
 
     <label class="lab" for="rg">RG:</label><br>
-    <input class="inp" type="text" id="rg" name="rg" required><br>
+    <input class="inp" type="number" id="rg" name="rg" required><br>
 
     <label class="lab" for="datadenascimento">Data de nascimento:</label><br>
     <input class="inp" id="dat1" type="date" id="datadenascimento" name="datadenascimento" required><br>
@@ -109,6 +109,7 @@
       <option value="1m">Primeiro ano (médio)</option>
       <option value="2m">Segundo ano (médio)</option>
       <option value="3m">Terceiro ano (médio)</option>
+      <option value="Outro">Outro</option>
     </select>
     </div>
 
@@ -127,10 +128,10 @@
     <label class="lab" for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
     <input class="inp" type="text" id="responsavel" name="responsavel" required><br>
     <label class="lab" for="cpf2">CPF:</label><br>
-    <input class="inp" type="text" id="cpf2" name="cpf2" required><br>
+    <input class="inp" type="number" id="cpf2" name="cpf2" required><br>
 
     <label class="lab" for="rg2">RG:</label><br>
-    <input class="inp" type="text" id="rg2" name="rg2" required><br>
+    <input class="inp" type="number" id="rg2" name="rg2" required><br>
 
     <label class="lab" for="datadenascimento2">Data de nascimento:</label><br>
     <input class="inp" id="dat2" type="date" id="datadenascimento2" name="datadenascimento2" required><br>
