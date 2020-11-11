@@ -72,6 +72,7 @@
   <div id=blocks>
   <div id="aluno">
   <h2>Dados do aluno</h2>
+  <form>
     <label class="lab" for="fname">Nome:</label><br>
     <input class="inp" type="text" id="name" name="fname" required><br>
 
@@ -112,6 +113,7 @@
       <option value="3m">Terceiro ano (médio)</option>
       <option value="Outro">Outro</option>
     </select>
+    
     </div>
 
     <label class="lab" for="periodo">Período escolar:</label><br>
@@ -124,8 +126,10 @@
     </select>
     </div>
     </div>
+  </form>
   <div id=respons>
   <h2>Dados do Responsável</h2>
+  <form>
     <label class="lab" for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
     <input class="inp" type="text" id="responsavel" name="responsavel" required><br>
     <label class="lab" for="cpf2">CPF:</label><br>
@@ -151,7 +155,8 @@
 
     <label class="lab" for="ocontato">Outro telefone de contato (familiar, vizinho etc.):</label><br>
     <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
-    </div>
+  </form>  
+  </div>
   </div>
 <footer><button type="button", id="go" onclick= "Login()"> Cadastrar </button></footer>
 </div >
