@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<h1>Dados do aluno</h1>
+<head>
+  <link rel="stylesheet" href="css/index.css">
+</head>
 <script>
     function Send(){
       var nome = document.getElementById('name');
@@ -30,76 +32,102 @@
   .then(response => {console.log(response);});
   }
 </script>
-<label for="fname">Nome:</label><br>
-<input type="text" id="name" name="fname"><br>
+<div class="area" >
+  <header> </header>
+  <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+  </ul>
+  <div id=blocks>
+  <div id="aluno">
+  <h2>Dados do aluno</h2>
+    <label class="lab" for="fname">Nome:</label><br>
+    <input class="inp" type="text" id="name" name="fname" required><br>
 
-<label for="cpf">CPF:</label><br>
-<input type="text" id="cpf" name="cpf"><br>
+    <label class="lab" for="cpf">CPF:</label><br>
+    <input class="inp" type="text" id="cpf" name="cpf" required><br>
 
-<label for="rg">RG:</label><br>
-<input type="text" id="rg" name="rg"><br>
+    <label class="lab" for="rg">RG:</label><br>
+    <input class="inp" type="text" id="rg" name="rg" required><br>
 
-<label for="datadenascimento">Data de nascimento:</label><br>
-<input type="text" id="datadenascimento" name="datadenascimento"><br>
+    <label class="lab" for="datadenascimento">Data de nascimento:</label><br>
+    <input class="inp" id="dat1" type="date" id="datadenascimento" name="datadenascimento" required><br>
 
-<label for="endereco">Endereço:</label><br>
-<input type="text" id="endereco" name="endereco"><br>
+    <label class="lab" for="endereco">Endereço:</label><br>
+    <input class="inp" type="text" id="endereco" name="endereco" required><br>
 
-<label for="telefonedoaluno">Telefone do aluno(incluir DDD):</label><br>
-<input type="text" id="telefonedoaluno" name="telefonedoaluno"><br>
+    <label class="lab" for="telefonedoaluno">Telefone do aluno (incluir DDD):</label><br>
+    <input class="inp" type="tel" id="telefonedoaluno" placeholder="Ex: 31 9 0000 0000" name="telefonedoaluno" required><br>
 
-<label for="emaildoaluno">E-mail do aluno:</label><br>
-<input type="text" id="emaildoaluno" name="emaildoaluno"><br>
+    <label class="lab" for="emaildoaluno">E-mail do aluno:</label><br>
+    <input class="inp" type="text" id="emaildoaluno" name="emaildoaluno" required><br>
 
-<label for="serie">Ano escolar em 2021:</label><br>
-<select id="serie" name="serie">
-  <option value="0">Jardim</option>
-  <option value="1">1º</option>
-  <option value="2">2º</option>
-  <option value="3">3º</option>
-  <option value="4">4º</option>
-  <option value="5">5º</option>
-  <option value="6">6º</option>
-  <option value="7">7º</option>
-  <option value="8">8º</option>
-  <option value="9">9º ano</option>
-  <option value="1m">Primeiro ano (médio)</option>
-  <option value="2m">Segundo ano (médio)</option>
-  <option value="3m">Terceiro ano (médio)</option>
-</select><br>
+    <label class="lab" for="serie">Ano escolar em 2021:</label><br>
+    <div class="box">
+      <select class="sel" id="serie" name="serie" required>
+      <option value=""></option>
+      <option value="0">Jardim</option>
+      <option value="1">1º</option>
+      <option value="2">2º</option>
+      <option value="3">3º</option>
+      <option value="4">4º</option>
+      <option value="5">5º</option>
+      <option value="6">6º</option>
+      <option value="7">7º</option>
+      <option value="8">8º</option>
+      <option value="9">9º ano</option>
+      <option value="1m">Primeiro ano (médio)</option>
+      <option value="2m">Segundo ano (médio)</option>
+      <option value="3m">Terceiro ano (médio)</option>
+    </select>
+    </div>
 
-<label for="periodo">Período escolar:</label><br>
-<select id="periodo" name="periodo">
-  <option value = "manha">Manhã</option>
-  <option value = "tarde">Tarde</option>
-  <option value = "noite">Noite</option>
-</select><br>
+    <label class="lab" for="periodo">Período escolar:</label><br>
+    <div class="box">
+      <select class="sel" id="periodo" name="periodo" required>
+      <option value=""></option>
+      <option value = "manha">Manhã</option>
+      <option value = "tarde">Tarde</option>
+      <option value = "noite">Noite</option>
+    </select>
+    </div>
+    </div>
+  <div id=respons>
+  <h2>Dados do Responsável</h2>
+    <label class="lab" for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
+    <input class="inp" type="text" id="responsavel" name="responsavel" required><br>
+    <label class="lab" for="cpf2">CPF:</label><br>
+    <input class="inp" type="text" id="cpf2" name="cpf2" required><br>
 
-<h2 id="Dresp">Dados do Responsável</h2><br>
-<label for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
-<input type="text" id="responsavel" name="responsavel"><br>
-<label for="cpf2">CPF:</label><br>
-<input type="text" id="cpf2" name="cpf2"><br>
+    <label class="lab" for="rg2">RG:</label><br>
+    <input class="inp" type="text" id="rg2" name="rg2" required><br>
 
-<label for="rg2">RG:</label><br>
-<input type="text" id="rg2" name="rg2"><br>
+    <label class="lab" for="datadenascimento2">Data de nascimento:</label><br>
+    <input class="inp" id="dat2" type="date" id="datadenascimento2" name="datadenascimento2" required><br>
 
-<label for="datadenascimento2">Data de nascimento:</label><br>
-<input type="text" id="datadenascimento2" name="datadenascimento2"><br>
+    <label class="lab" for="endereco2">Endereço:</label><br>
+    <input class="inp" type="text" id="endereco2" name="endereco2" required><br>
 
-<label for="endereco2">Endereço:</label><br>
-<input type="text" id="endereco2" name="endereco2"><br>
+    <label class="lab" for="telefone2">Telefone (incluir DDD):</label><br>
+    <input class="inp" type="tel" id="telefone2" placeholder="Ex: 31 9 0000 0000" name="telefone2" required><br>
 
-<label for="telefone2">Telefone(incluir DDD):</label><br>
-<input type="text" id="telefone2" name="telefone2"><br>
+    <label class="lab" for="email2">E-mail:</label><br>
+    <input class="inp" type="text" id="email2" name="email2" required><br>
 
-<label for="email2">E-mail:</label><br>
-<input type="text" id="email2" name="email2"><br>
+    <label class="lab" for="profissao">Profissão:</label><br>
+    <input class="inp" type="text" id="profissao" name="profissao" required><br>
 
-<label for="profissao">Profissão:</label><br>
-<input type="text" id="profissao" name="profissao"><br>
-
-<label for="ocontato">Outro telefone de contato (familiar, vizinho etc.):</label><br>
-<input type="text" id="ocontato" name="ocontato"><br>
-
-<button type="button", id="go" onclick= "Send()"> Go</button>
+    <label class="lab" for="ocontato">Outro telefone de contato (familiar, vizinho etc.):</label><br>
+    <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
+    </div>
+  </div>
+<footer><button type="button", id="go" onclick= "Send()"> Cadastrar </button></footer>
+</div >
