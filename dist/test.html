@@ -22,38 +22,11 @@
       var email2 = document.getElementById('email2');
       var profissao = document.getElementById('profissao');
       var ocontato = document.getElementById('ocontato');
-      data = [nome.value, cpf.value, rg.value, datadenascimento.value,endereco.value,telefonedoaluno.value,
-    emaildoaluno.value, serie.value, periodo.value, responsavel.value, cpf2.value, rg2.value, 
-    datadenascimento2.value, endereco2.value, telefone2.value, email2.value, profissao.value, ocontato.value];
-    fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
-      method: 'put',
-      body: data,
-    })
-  .then(response => {console.log(response);alert("Pré-matrícula realizada com sucesso");
-  window.location='https://objective-newton-1a197c.netlify.app/index'});
-  }
-  function check(out){
-      console.log("this is the out", out);
-      if(out=="0"){
-        alert("Este CPF já está cadastrado");
-        window.location='https://objective-newton-1a197c.netlify.app/index'
-      }else{Send()}
+      data = [nome, cpf, rg, datadenascimento,endereco,telefonedoaluno,
+    emaildoaluno, serie, periodo, responsavel, cpf2, rg2, 
+    datadenascimento2, endereco2, telefone2, email2, profissao, ocontato];
+    for(i=0; i<data.length;i++){console.log(i, data[i].value)}
     }
-    function Login(){
-      var cpf_ = document.getElementById('cpf').value;
-      var data = String(cpf_);
-      console.log('lenght', data.length, data, typeof(data));
-      if(data.length!=11){alert("CPF inválido");
-        window.location='https://objective-newton-1a197c.netlify.app/matricula'}
-      else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       },
-      method: 'POST',
-      body: [data],
-    })
-  .then(response => response.text()).then((data)=>{this.check(data)})}}
 </script>
 <div class="area" >
   <header> </header>
@@ -153,5 +126,5 @@
     <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
     </div>
   </div>
-<footer><button type="button", id="go" onclick= "Login()"> Cadastrar </button></footer>
+<footer><button type="button", id="go" onclick= "Send()"> Cadastrar </button></footer>
 </div >
