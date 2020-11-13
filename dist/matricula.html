@@ -33,7 +33,7 @@
     function Send(){
       data = collect();
       if(data == "x"){console.log('err0r',data);}
-      else{console.log('verything ok');
+      else if(data.length > 1){console.log('verything ok');
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
@@ -45,8 +45,7 @@
       console.log("this is the out", out);
       if(out=="0"){
         alert("Este CPF já está cadastrado");
-        window.location='https://objective-newton-1a197c.netlify.app/index'
-      }else{Send()}
+      }else if(out=="1"){Send()}
     }
     function Login(){
       var cpf_ = document.getElementById('cpf').value;
@@ -61,7 +60,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then((data)=>{this.check(data)})}}
+  .then(response => response.text()).then((dado)=>{this.check(dado)})}}
 </script>
 <form>
 <div class="area" >
