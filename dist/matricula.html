@@ -33,7 +33,7 @@
     }
     function Send(){
       data = collect();
-      if(data == "x"){return}
+      if(data == "x"){console.log('fall');return}
       else{
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
