@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <script>
-    function Send(){
+    function collect(){
       var nome = document.getElementById('name');
       var cpf = document.getElementById('cpf');
       var rg = document.getElementById('rg');
@@ -25,6 +25,9 @@
       data = [nome.value, cpf.value, rg.value, datadenascimento.value,endereco.value,telefonedoaluno.value,
     emaildoaluno.value, serie.value, periodo.value, responsavel.value, cpf2.value, rg2.value, 
     datadenascimento2.value, endereco2.value, telefone2.value, email2.value, profissao.value, ocontato.value];
+      return data}
+    function Send(){
+      data = collect();
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
@@ -155,6 +158,6 @@
     <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
   </div>
   </div>
-<footer><button type="submit", id="go" onclick= "Login()"> Cadastrar </button></footer>
+<footer><button type="submit" id="go" onclick= "Login()"> Cadastrar </button></footer>
 </div >
 </form>
