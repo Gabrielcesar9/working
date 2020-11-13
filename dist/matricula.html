@@ -32,8 +32,8 @@
     }
     function Send(){
       data = collect();
-      if(data == "x"){console.log('fall');alert('fall');}
-      else{
+      if(data == "x"){console.log('err0r',data);}
+      else{console.log('verything ok');
     fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
