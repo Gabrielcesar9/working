@@ -29,7 +29,7 @@
     var cdr = function(){var cd = 0;
       for(i=0;i<data.length;i++){if(String(data[i]).replace(" ","") == ""){cdr ++}};return cd}
     console.log('cdr', cdr);
-    if(cdr>0){fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
+    if(cdr==0){fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
     })
