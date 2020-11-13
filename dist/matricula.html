@@ -52,7 +52,7 @@
       var cpf_ = document.getElementById('cpf').value;
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
-      if(data.length!=11){alert("CPF inválido");}
+      if(data.length!=11){alert("CPF inválido"); return}
       else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
