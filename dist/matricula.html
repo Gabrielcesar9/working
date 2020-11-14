@@ -3,9 +3,6 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <script>
-  var form = document.getElementById("myform");
-  function handleForm(event) { event.preventDefault(); } 
-  form.addEventListener('submit', handleForm);
     function values(){
       var nome = document.getElementById('name');
       var cpf = document.getElementById('cpf');
@@ -164,3 +161,6 @@
 <footer><button type="submit" id="go"> Cadastrar </button></footer>
 </div >
 </form>
+<script>var form = document.getElementById("myform");
+  function handleForm(event) { event.preventDefault(); } 
+  form.addEventListener('submit', handleForm);</script>
