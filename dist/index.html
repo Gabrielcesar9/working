@@ -4,10 +4,6 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <script>
-  function wait(){
-    document.getElementById('wait').value="Aguarde...";
-    Login();
-  }
     function check(out){
       console.log("this is the out", out);
       if(out=="0"){
@@ -16,6 +12,7 @@
       }else{window.location='https://objective-newton-1a197c.netlify.app/matricula'}
     }
     function Login(){
+      document.getElementById('wait').innerHTML="Aguarde...";
       var cpf_ = document.getElementById('cpf_').value;
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
@@ -36,7 +33,7 @@
     <span id="text-center">Bem vindo!</span>
       <!---<label for="cpf_">CPF:</label><br> -->
       <input type='number' id='cpf_' placeholder="CPF" required>
-  <button type="button" id="login_" onclick= "wait()"> Pré-matrícula</button>
+<button type="button" id="login_" onclick= "Login()"> Pré-matrícula</button>
 <spam id="wait"></spam>
 </body></form>
 <img id="logo" src="imgs/Fly+Slogan-01.png" width="200px" height="200px">
