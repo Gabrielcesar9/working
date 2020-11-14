@@ -94,9 +94,8 @@ body{
     background-color: #1680a0;
   }
   #wait2{
-    position: absolute;
-    right: 2%;
-    bottom:2%;
+    position: relative;
+    left:70%;
     font-weight: 700;
     color: white;
     font-family: sans-serif;
