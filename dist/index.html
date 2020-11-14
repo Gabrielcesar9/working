@@ -8,8 +8,8 @@
       console.log("this is the out", out);
       if(out=="0"){
         alert("Este CPF já está cadastrado");
-        window.location='https://objective-newton-1a197c.netlify.app/index'
-      }else{window.location='https://objective-newton-1a197c.netlify.app/matricula'}
+        window.location='https://flyenglish-mg.netlify.app/index'
+      }else{window.location='https://flyenglish-mg.netlify.app/matricula'}
     }
     function Login(){
       document.getElementById('wait').innerHTML="Aguarde...";
@@ -17,8 +17,8 @@
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
       if(data.length!=11){alert("CPF inválido");
-        window.location='https://objective-newton-1a197c.netlify.app/index'}
-      else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
+        window.location='https://flyenglish-mg.netlify.app/index'}
+      else{fetch('https://flyenglish-mg.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
