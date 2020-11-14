@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<head>
-  <link rel="stylesheet" href="css/form.css">
-</head>
+<link rel="stylesheet" href="css/form.css">
 <script>
     function values(){
       var nome = document.getElementById('name');
@@ -58,24 +56,13 @@
     })
   .then(response => response.text()).then((data)=>{this.check(data)})}}
 </script>
+<body>
 <form id = "myform" onsubmit="Login()">
 <div class="area" >
   <header> </header>
-  <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-  </ul>
   <div id=blocks>
   <div id="aluno">
-  <spam id="title">Dados do aluno</spam>
+  <spam class="title">Dados do(a) aluno(a)</spam><br><spam></spam><br><spam></spam><br>
     <label class="lab" for="fname">Nome:</label><br>
     <input class="inp" type="text" id="name" name="fname" required><br>
 
@@ -130,7 +117,7 @@
     </div>
     </div>
   <div id=respons>
-  <spam class=title>Dados do Responsável</spam>
+  <spam class=title>Dados do(a) Responsável</spam><br><spam></spam><br><spam></spam><br>
     <label class="lab" for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
     <input class="inp" type="text" id="responsavel" name="responsavel" required><br>
     <label class="lab" for="cpf2">CPF:</label><br>
@@ -163,6 +150,7 @@
     <spam id="wait2"></spam></div>
 </div >
 </form>
+</body>
 <script>var form = document.getElementById("myform");
   function handleForm(event) { event.preventDefault(); } 
   form.addEventListener('submit', handleForm);</script>
