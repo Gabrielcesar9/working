@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/form.css">
 </head>
 <script>
     function values(){
@@ -75,7 +75,7 @@
   </ul>
   <div id=blocks>
   <div id="aluno">
-  <h2>Dados do aluno</h2>
+  <spam id="title">Dados do aluno</spam>
     <label class="lab" for="fname">Nome:</label><br>
     <input class="inp" type="text" id="name" name="fname" required><br>
 
@@ -130,7 +130,7 @@
     </div>
     </div>
   <div id=respons>
-  <h2>Dados do Responsável</h2>
+  <spam class=title>Dados do Responsável</spam>
     <label class="lab" for="resposavel">Nome do pai/mãe/tutor ou responsável:</label><br>
     <input class="inp" type="text" id="responsavel" name="responsavel" required><br>
     <label class="lab" for="cpf2">CPF:</label><br>
@@ -158,7 +158,9 @@
     <input class="inp" type="tel" id="ocontato" placeholder="Ex: 31 9 0000 0000" name="ocontato" required><br>
   </div>
   </div>
-<footer><button type="submit" id="go"> Cadastrar </button></footer>
+  <div id="footer">
+    <button type="submit" id="go"> Cadastrar </button>
+    <spam id="wait2"></spam></div>
 </div >
 </form>
 <script>var form = document.getElementById("myform");
