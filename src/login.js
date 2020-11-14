@@ -12,7 +12,7 @@ exports.handler = function(event, context, callback) {
   item = event.body;
   console.log('item', item);
   var cpfs = new Array();
-  base('Table 2').select({
+  base('prematricula').select({
     // Selecting the first 3 records in Grid view:
     maxRecords: 100,
     view: "Grid view"
