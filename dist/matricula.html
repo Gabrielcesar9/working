@@ -42,7 +42,7 @@
       }else{Send()}
     }
     function Login(){
-      document.getElementById('wait2').innerHTML="Aguarde...";
+      document.getElementById('go').innerHTML="Aguarde...";
       var cpf_ = document.getElementById('cpf').value;
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
@@ -148,7 +148,6 @@
   </div>
   <div id="footer">
     <button type="submit" id="go"> Cadastrar </button>
-    <spam id="wait2"></spam></div>
 </div >
 </form>
 </body>
