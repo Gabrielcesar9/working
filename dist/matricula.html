@@ -4,7 +4,6 @@
 </head>
 <script>
     function Send(){
-      var cdr = 0;
       var nome = document.getElementById('name');
       var cpf = document.getElementById('cpf');
       var rg = document.getElementById('rg');
@@ -26,28 +25,26 @@
       data = [nome.value, cpf.value, rg.value, datadenascimento.value,endereco.value,telefonedoaluno.value,
     emaildoaluno.value, serie.value, periodo.value, responsavel.value, cpf2.value, rg2.value, 
     datadenascimento2.value, endereco2.value, telefone2.value, email2.value, profissao.value, ocontato.value];
-    var cdr = function(){var cd = 0;
-      for(i=0;i<data.length;i++){if(String(data[i]).replace(" ","") == ""){cdr ++}};return cd}
-    console.log('cdr', cdr);
-    if(cdr==0){fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
+    fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/try',{
       method: 'put',
       body: data,
     })
   .then(response => {console.log(response);alert("Pré-matrícula realizada com sucesso");
-  window.location='https://objective-newton-1a197c.netlify.app/index'})}
-  else{alert("Preencha todos os campos")};
+  window.location='https://objective-newton-1a197c.netlify.app/index'});
   }
   function check(out){
       console.log("this is the out", out);
       if(out=="0"){
         alert("Este CPF já está cadastrado");
+        window.location='https://objective-newton-1a197c.netlify.app/index'
       }else{Send()}
     }
     function Login(){
       var cpf_ = document.getElementById('cpf').value;
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
-      if(data.length!=11){alert("CPF inválido");}
+      if(data.length!=11){alert("CPF inválido");
+        window.location='https://objective-newton-1a197c.netlify.app/matricula'}
       else{fetch('https://objective-newton-1a197c.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
