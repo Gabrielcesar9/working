@@ -341,3 +341,11 @@ h2{
 #go:hover{
   background-color: #1680a0;
 }
+#wait{
+  position: absolute;
+  right: 2%;
+  bottom:2%;
+  font-weight: 700;
+  color: white;
+  font-family: sans-serif;
+}
