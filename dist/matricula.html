@@ -3,6 +3,9 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <script>
+  var form = document.getElementById("myform");
+  function handleForm(event) { event.preventDefault(); } 
+  form.addEventListener('submit', handleForm);
     function values(){
       var nome = document.getElementById('name');
       var cpf = document.getElementById('cpf');
@@ -58,7 +61,7 @@
     })
   .then(response => response.text()).then((data)=>{this.check(data)})}}
 </script>
-<form onsubmit="Login()">
+<form id = "myform" onsubmit="Login()">
 <div class="area" >
   <header> </header>
   <ul class="circles">
