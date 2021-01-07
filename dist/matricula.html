@@ -42,7 +42,6 @@
       }else{Send()}
     }
     function Login(){
-      document.getElementById('go').innerHTML="Aguarde...";
       var cpf_ = document.getElementById('cpf').value;
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
@@ -55,7 +54,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then((data)=>{this.check(data)})}}
+  .then(response => response.text()).then((data)=>{document.getElementById('go').innerHTML="Aguarde...";this.check(data);})}}
 </script>
 <body>
 <form id = "myform" onsubmit="Login()">
