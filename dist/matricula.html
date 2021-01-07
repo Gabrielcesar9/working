@@ -31,7 +31,7 @@
       method: 'put',
       body: data,
     })
-  .then(response => {console.log(response);alert("Pré-matrícula realizada com sucesso \n   Seu cadastro foi realizado com sucesso!\n   Em breve entraremos em contato pelo WhatsApp para detalhes de horários e pagamento.");
+  .then(response => {console.log(response);alert("     Pré-matrícula realizada com sucesso \n     Seu cadastro foi realizado com sucesso!\n   Em breve entraremos em contato pelo WhatsApp      para detalhes de horários e pagamento.");
   window.location='https://flyenglish-mg.netlify.app/index'});
   }
   function check(out){
@@ -46,7 +46,7 @@
       var data = String(cpf_);
       console.log('lenght', data.length, data, typeof(data));
       if(data.length!=11){alert("CPF inválido");}
-      else{fetch('https://flyenglish-mg.netlify.app/.netlify/functions/login',{
+      else{document.getElementById('go').innerHTML="Aguarde...";fetch('https://flyenglish-mg.netlify.app/.netlify/functions/login',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -54,7 +54,7 @@
       method: 'POST',
       body: [data],
     })
-  .then(response => response.text()).then((data)=>{document.getElementById('go').innerHTML="Aguarde...";this.check(data);})}}
+  .then(response => response.text()).then((data)=>{this.check(data);})}}
 </script>
 <body>
 <form id = "myform" onsubmit="Login()">
