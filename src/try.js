@@ -19,7 +19,7 @@ base('prematricula').create([{
           "Endereco":items[4],
           "Telefone do aluno":items[5],
           "E-mail do aluno":items[6],
-          "Serie ou ano em 2021 (na escola)":items[7],
+          "Serie ou ano em 2022 (na escola)":items[7],
           "Periodo (manha, tarde, noite)":items[8],
           "Nome do pai/mae/tutor responsavel":items[9],
           "CPF2":items[10],
